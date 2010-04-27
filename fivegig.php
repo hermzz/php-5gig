@@ -42,6 +42,9 @@ class FiveGig
 	
 	private function _request($method, $params)
 	{
+		if(!$this->_api_key)
+			throw new Exception('Please set an API key');
+		
 		$tmp_params = array();
 		foreach($params as $k => $v)
 			$tmp_params[] = $k.'='.urlencode($v);
