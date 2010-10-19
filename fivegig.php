@@ -61,6 +61,9 @@ class FiveGig
 		if(!$data)
 			throw new Exception('Got invalid JSON from the server');
 			
+		if($data->status == 'error')
+			throw new Exception($data->error->message);
+			
 		return $data;
 	}
 }
