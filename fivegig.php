@@ -32,7 +32,7 @@ class FiveGig
 	
 	public function artistGetEvents($artist, $country_iso=false, $past=false)
 	{
-		return $this->_request('city.getEvents', array('artist' => $artist, 'country_iso' => $country_iso, 'past' => $past));
+		return $this->_request('artist.getEvents', array('artist' => $artist, 'country_iso' => $country_iso, 'past' => $past));
 	}
 	
 	public function setDomain($domain)
